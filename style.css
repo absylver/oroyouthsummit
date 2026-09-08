@@ -1,0 +1,463 @@
+/* ===========================================================
+   Oro Youth Summit 2026 — shared styles
+   Pure white background, red as the dominant accent.
+   Clean surfaces — shadows/color do the work, not borders.
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --ink: #1B1512;
+  --paper: #FFFFFF;
+  --paper-deep: #FBEAEA;
+  --red: #C21313;
+  --red-deep: #8A0D0D;
+  --line: #F1E1E1;
+  --max: 1080px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--red-deep);
+}
+
+a{ color: inherit; }
+img{ max-width: 100%; display: block; }
+
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- top bar (red) ---------- */
+
+.topbar{
+  background: var(--red);
+}
+
+.topbar .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-mark{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.brand-mark img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-text{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.brand-text span{
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--paper-deep);
+  margin-top: 1px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav a{
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.9;
+  padding-bottom: 2px;
+  transition: opacity 0.15s ease;
+}
+
+nav a:hover, nav a.active{
+  opacity: 1;
+}
+
+nav a.btn-watch{
+  background: #fff;
+  color: var(--red-deep);
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+nav a.btn-watch:hover{
+  background: var(--paper-deep);
+  opacity: 1;
+}
+
+nav a.btn-watch::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  display: inline-block;
+}
+
+body.is-live nav a.btn-watch::before{
+  animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes live-pulse{
+  0%, 100%{ opacity: 1; transform: scale(1); }
+  50%{ opacity: 0.4; transform: scale(1.3); }
+}
+
+/* ---------- hero: text left, speaker carousel right (equal width) ---------- */
+
+.hero{
+  position: relative;
+  padding: 64px 0 56px;
+  overflow: hidden;
+}
+
+.hero::before{
+  content: "";
+  position: absolute;
+  top: -140px;
+  right: -160px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(194,19,19,0.08) 0%, rgba(194,19,19,0) 70%);
+  pointer-events: none;
+}
+
+.hero .wrap.hero-inner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-text,
+.hero-carousel{
+  flex: 1 1 0;
+  min-width: 280px;
+}
+
+.hero .kicker{
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+
+.hero h1{
+  font-size: clamp(2.3rem, 4.6vw, 3.4rem);
+}
+
+.hero .theme{
+  margin-top: 18px;
+  max-width: 42ch;
+  font-size: 18px;
+  color: #4A3B3B;
+}
+
+.meta-list{
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.meta-list li{
+  padding-right: 16px;
+  margin-right: 16px;
+  position: relative;
+}
+
+.meta-list li:not(:last-child)::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+@media (max-width: 760px){
+  .hero .wrap.hero-inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-text,
+  .hero-carousel{
+    min-width: 0;
+  }
+}
+
+/* ---------- speaker carousel ---------- */
+
+.carousel{ position: relative; }
+
+.carousel-track{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 4px 4px 4px;
+  margin: 0 -4px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar{ display: none; }
+
+.speaker-card{
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+.speaker-card .photo{
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: top;
+  background: var(--paper-deep);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px -14px rgba(138,13,13,0.35);
+}
+
+.speaker-card .role-tag{
+  margin-top: 16px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.speaker-card .name{
+  margin-top: 5px;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--ink);
+}
+
+.speaker-card .role{
+  font-size: 14px;
+  color: #6B5555;
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+.carousel-controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.carousel-dots{
+  display: flex;
+  gap: 7px;
+}
+
+.carousel-dots button{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--line);
+  cursor: pointer;
+}
+
+.carousel-dots button.active{
+  background: var(--red);
+}
+
+.carousel-arrows{
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-arrows button{
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: var(--paper-deep);
+  color: var(--red-deep);
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.carousel-arrows button:hover{
+  background: var(--red);
+  color: #fff;
+}
+
+.carousel-arrows button:disabled{
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ---------- livestream ---------- */
+
+.stream-section{
+  padding: 8px 0 56px;
+}
+
+.stream-section .wrap{
+  padding-top: 48px;
+}
+
+.stream-section h2{
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.stream-section .sub{
+  color: #6B5555;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.stream-frame{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 44px -20px rgba(138,13,13,0.4);
+}
+
+.stream-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.stream-note{
+  margin-top: 14px;
+  font-size: 14px;
+  color: #6B5555;
+}
+
+/* ---------- footer ---------- */
+
+footer{
+  padding: 26px 0 40px;
+}
+
+footer .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+footer .org{
+  font-size: 13.5px;
+  color: #6B5555;
+}
+
+.visit-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink);
+  padding: 7px 12px;
+  background: var(--paper-deep);
+  border-radius: 999px;
+}
+
+.visit-badge .dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.visit-badge b{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 640px){
+  .topbar .wrap{ justify-content: center; text-align: center; }
+  nav{ gap: 16px; }
+}
+
+:focus-visible{
+  outline: 2px solid var(--red-deep);
+  outline-offset: 2px;
+}
