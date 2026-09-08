@@ -1,11 +1,3 @@
-/*
-  Speaker carousel — swipe (touch/trackpad) works natively via
-  CSS scroll-snap on .carousel-track. This script adds:
-  - dot indicators + prev/next arrows, synced to the visible card
-  - auto-scroll every 4.5s, looping back to the first speaker
-  - auto-scroll pauses on hover/touch and after manual interaction,
-    then resumes a few seconds later
-*/
 (function () {
   const track = document.getElementById("carousel-track");
   const dotsWrap = document.getElementById("carousel-dots");
