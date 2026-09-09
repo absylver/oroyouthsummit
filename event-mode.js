@@ -1,4 +1,5 @@
 
+*/
 (function () {
   const EVENT_DATE = { year: 2026, month: 8, day: 12 }; // month is 0-indexed: 8 = September
 
@@ -10,13 +11,17 @@
   if (!isEventDay) return;
 
   const hero = document.querySelector(".hero");
+  const marquee = document.querySelector(".marquee");
   const stream = document.querySelector(".stream-section");
   if (!hero || !stream) return;
 
-  // Move the livestream section above the hero.
+  // Move the marquee + livestream section above the hero, keeping
+  // the marquee directly above the video (not just above the hero).
+  if (marquee) hero.parentNode.insertBefore(marquee, hero);
   hero.parentNode.insertBefore(stream, hero);
 
-  
+  // Let CSS know it's event day (pulsing "live" cue on the watch button,
+  // and a small note swap).
   document.body.classList.add("is-live");
 
   const sub = stream.querySelector(".sub");
