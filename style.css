@@ -122,6 +122,14 @@ body.is-live nav a.btn-watch::before{
   50%{ opacity: 0.4; transform: scale(1.3); }
 }
 
+/* ---------- visitor banner (above hero) ---------- */
+
+.visitor-banner{
+  display: flex;
+  justify-content: center;
+  padding: 14px 0;
+}
+
 /* ---------- hero: text left, speaker carousel right (equal width) ---------- */
 
 .hero{
@@ -572,4 +580,4 @@ footer .org{
 :focus-visible{
   outline: 2px solid var(--red-deep);
   outline-offset: 2px;
-}
+                   }
