@@ -1,7 +1,7 @@
 
 */
 (function () {
-  const EVENT_DATE = { year: 2026, month: 8, day: 12 }; // month is 0-indexed: 8 = September
+  const EVENT_DATE = { year: 2026, month: 8, day: 9 }; // month is 0-indexed: 8 = September
 
   const dayStart = new Date(EVENT_DATE.year, EVENT_DATE.month, EVENT_DATE.day, 0, 0, 0);
   const dayEnd = new Date(EVENT_DATE.year, EVENT_DATE.month, EVENT_DATE.day + 1, 0, 0, 0);
