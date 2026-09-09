@@ -463,24 +463,6 @@ footer .org{
 .visit-badge{
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--ink);
-  padding: 7px 12px;
-  background: var(--paper-deep);
-  border-radius: 999px;
-}
-
-.visit-badge .dot{
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--red);
-}
-
-.visit-badge b{
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
 }
 
 /* ---------- responsive ---------- */
@@ -498,4 +480,4 @@ footer .org{
 :focus-visible{
   outline: 2px solid var(--red-deep);
   outline-offset: 2px;
-}
+  }
