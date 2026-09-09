@@ -126,8 +126,8 @@ body.is-live nav a.btn-watch::before{
 
 .visitor-banner{
   display: flex;
-  justify-content: center;
-  padding: 14px 0;
+  justify-content: left;
+  padding: 5px 0;
 }
 
 /* ---------- hero: text left, speaker carousel right (equal width) ---------- */
