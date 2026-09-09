@@ -1,5 +1,4 @@
 
-*/
 (function () {
   const EVENT_DATE = { year: 2026, month: 8, day: 9 }; // month is 0-indexed: 8 = September
 
@@ -27,3 +26,4 @@
   const sub = stream.querySelector(".sub");
   if (sub) sub.textContent = "We're live now — the stream is playing below.";
 })();
+ 
