@@ -24,6 +24,6 @@
   document.body.classList.add("is-live");
 
   const sub = stream.querySelector(".sub");
-  if (sub) sub.textContent = "We're live now — the stream is playing below.";
+  if (sub) sub.textContent = "We're live now — Kindly follows us on all social media platforms.";
 })();
  
